@@ -87,6 +87,7 @@ if (salary === "yes") {
     var approved = prompt("Enter your salary");
     if (approved <= 1000) {
         result = approved * 0.05;
+     alert("Your taxes is " + result + "eur, " + "of 5%")
     } else if (approved > 1000){
         tax10 = approved - 1000;
         Tax10 = tax10 * 0.10;
@@ -99,6 +100,7 @@ if (salary === "yes") {
     var denied = prompt("Enter your salary");
     if (denied <= 1000) {
         result = denied * 0.11;
+      alert("Your taxes is " + result + "eur, " + "of 11%")
     } else if (denied > 1000){
         tax18 = denied - 1000;
         Tax18 = tax18 * 0.18;
