@@ -1,6 +1,7 @@
 // Write a JavaScript program to randomly generate ten values, determine the largest value that you’ve generated, and print it to console or alert.
 
 
+function tenRandomValues(){
     var result=0;
     var random;
 
@@ -13,5 +14,5 @@
         
         console.log(result);
     }
-
+}
     
