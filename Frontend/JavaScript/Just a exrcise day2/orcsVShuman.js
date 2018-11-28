@@ -29,10 +29,10 @@ function orcVShuman(orc, human){
         orc.hitpoints -= human.doesDamage() + orc.armor;
 
         if (human.hitpoints <= 0) {
-            return console.log("Orc win!");
+            return console.log("Orc hp " + orc.hitpoints + " !!  ORC WIN  !! " + human.hitpoints + " Human hp.");
 
         } else if (orc.hitpoints <= 0) {
-            return console.log("Human win!");
+            return console.log("Orc hp " + orc.hitpoints + " !!  HUMAN WIN  !! " + human.hitpoints + " Human hp.");
         }
     }
 
@@ -50,10 +50,10 @@ function orcsVShumans(orc, human, wolfRider, knight){
         wolfRider.hitpoints -= knight.doesDamage() + wolfRider.armor;
 
         if (human.hitpoints <= 0 || knight.hitpoints <= 0) {
-            return console.log(orc.hitpoints + " " + wolfRider.hitpoints + " Orcs wins!" + human.hitpoints + " " + knight.hitpoints);
+            return console.log("Orcs hp " + orc.hitpoints + ", " + wolfRider.hitpoints + " !! ORCS WINS  !!" + human.hitpoints + ", " + knight.hitpoints + " Humans hp");
 
         } else if (orc.hitpoints <= 0 || wolfRider.hitpoints <= 0) {
-            return console.log(orc.hitpoints + " " + wolfRider.hitpoints + " Humans wins!" + human.hitpoints + " " + knight.hitpoints);
+            return console.log("Orcs hp " + orc.hitpoints + ", " + wolfRider.hitpoints + " !!  HUMANS WINS  !! " + human.hitpoints + ", " + knight.hitpoints + " Humans hp ");
         }
     }
 
