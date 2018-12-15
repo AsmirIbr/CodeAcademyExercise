@@ -1,0 +1,64 @@
+.mainContainer{
+    position: relative;
+    display: flex;
+}
+
+.leftContainer{
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+}
+
+.profileImg{
+    width: 200px;
+    height: 200px;
+}
+
+.rightContainer{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+
+.image-style {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+}
+
+.popUpClass {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    top: 100px;
+    left: 300px;
+    right: 300px;
+    height: 350px;
+}
+
+.before{
+    margin-right: 15px;
+    width: 50px;
+    height: 50px;
+}
+
+.after{
+    margin-left: 15px;
+    width: 50px;
+    height: 50px;
+    order: 1;
+}
+
+.exit{
+    position: absolute;
+    right: 60px;
+    top: 3px;
+    width: 30px;
+    height: 30px;
+}
+
+.button{
+    width: 80px;
+    height: 20px;
+    margin-left: 200px;
+}
