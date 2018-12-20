@@ -1,0 +1,121 @@
+.mainContainer{
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    height: 500px;
+    width: 350px;
+    background-color: rgb(26, 23, 23);
+    margin:auto;
+    border-radius: 13px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.25);
+}
+
+.fieldInput{
+    height: 45px;
+    width: 80%;
+    padding: 12px 20px;
+    margin: 0 auto;
+    margin-top: 25px;
+    font-size: 28px;
+    box-sizing: border-box;
+    background-color: rgb(160, 238, 160)
+}
+
+.wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: 30px auto 0;
+}
+
+div button {
+    width: 60px;
+    height: 60px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: solid black 2px;
+    margin: 5px;
+    font-size: 20px;
+}
+
+div .button:hover {
+    background-color: #c8cec8
+}
+
+div .button:active {
+    background-color: #9ca09c;
+    box-shadow: 0 5px rgb(87, 81, 81);
+    transform: translateY(2px);
+}
+
+.equals{
+    width: 100%;
+}
+
+
+.class7{
+    order:1;
+}
+
+.class8{
+    order:2;
+}
+
+.class9{
+    order:3;
+}
+#plus{
+    order:4;
+}
+
+.class4{
+    order:5;
+}
+
+.class5{
+    order:6;
+}
+
+.class6{
+    order:7;
+}
+
+#minus{
+    order:8;
+}
+
+.class1{
+    order: 9;
+}
+
+.class2{
+    order: 10;
+}
+
+.class3{
+    order: 11;
+}
+
+#divide{
+    order:12;
+}
+
+#dot{
+    order: 13;
+}
+
+.class0{
+    order:14;
+}
+
+#clear{
+    order: 15;
+}
+
+#multiply{
+    order: 16;
+}
+
+#equals{
+    order: 17;
+}
