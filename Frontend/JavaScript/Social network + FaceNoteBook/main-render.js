@@ -57,16 +57,166 @@ function PageRenderer(data) {
         rightContainer.classList.add("rightContainer");
 
         var pictureContainer = document.createElement("div");
+        pictureContainer.style.display = "flex";
+        pictureContainer.style.flexWrap = "wrap";
         rightContainer.appendChild(pictureContainer);
 
+// Updated
+
+        var addPicture = document.createElement("img");
+        addPicture.classList.add("image-style");
+        addPicture.src = "img/add.jpg"
+        pictureContainer.appendChild(addPicture);
+
+        addPicture.addEventListener("click", function () {
+
+            var addPicturePopUp = document.createElement("div");
+            addPicturePopUp.classList.add("addPopUpClass");
+            rightContainer.appendChild(addPicturePopUp)
+
+            var addFromFile = document.createElement("div");
+            addFromFile.classList.add("add-div");
+            addPicturePopUp.appendChild(addFromFile)
+
+            var fileImg = document.createElement("div");
+            fileImg.style.background = "rgba(209, 207, 207, 0.9)";
+            fileImg.style.cursor = "pointer";
+            fileImg.style.display = "flex";
+            fileImg.style.alignItems = "center"
+            fileImg.style.height = "100%";
+            fileImg.style.width = "100%";
+            addFromFile.appendChild(fileImg);
+
+            var text = document.createElement("span");
+            text.innerHTML = "<b> +  Upload Photo </b>";
+            text.style.width = "100%"
+            fileImg.appendChild(text);
+
+            var addInput = document.createElement("input");
+            addInput.id = "inputId"
+            addInput.type = "file";
+            addInput.accept = "image/png, image/jpeg";
+            addInput.classList.add("add-input");
+            addFromFile.appendChild(addInput);
+
+            addInput.addEventListener("change", function () {
+                if (this.files && this.files[0]) {
+
+                    var newImgDiv = document.createElement("div");
+                    newImgDiv.classList.add("image-style");
+                    pictureContainer.appendChild(newImgDiv);
+
+                    var newImg = document.createElement("img");
+                    newImg.classList.add("image-style");
+                    newImg.src = URL.createObjectURL(this.files[0]);
+                    newImgDiv.appendChild(newImg);
+
+                    var removeImg = document.createElement("div");
+                    removeImg.classList.add("remove-img");
+                    newImgDiv.appendChild(removeImg);
+
+                    var deleteX = document.createElement("img");
+                    deleteX.src = "img/x.png";
+                    deleteX.style.height = "100%";
+                    deleteX.style.width = "100%";
+                    removeImg.appendChild(deleteX);
+
+                    deleteX.addEventListener("click", function (event) {
+                        var parent = event.target.parentNode;
+                        var removePhoto = parent.parentNode;
+                        removePhoto.parentNode.removeChild(removePhoto);
+                    })
+                }
+            })
+
+            var addViaUrl = document.createElement("div");
+            addViaUrl.classList.add("add-div");
+            addViaUrl.style.background = "rgba(209, 207, 207, 0.9)";
+            addPicturePopUp.appendChild(addViaUrl)
+
+            var getUrl = document.createElement("input");
+            getUrl.type = "text";
+            getUrl.style.width = "80%"
+            getUrl.style.marginTop = "20%"
+            getUrl.placeholder = "Enter image URL"
+            addViaUrl.appendChild(getUrl);
+
+            var submit = document.createElement("input");
+            submit.type = "submit";
+            submit.style.marginTop = "5px"
+            addViaUrl.appendChild(submit);
+
+            submit.addEventListener("click", function () {
+                var newImgDiv = document.createElement("div");
+                newImgDiv.classList.add("image-style");
+                pictureContainer.appendChild(newImgDiv);
+
+                var newImg = document.createElement("img");
+                newImg.classList.add("image-style");
+                newImg.src = getUrl.value;
+                newImgDiv.appendChild(newImg);
+
+                var removeImg = document.createElement("div");
+                removeImg.classList.add("remove-img");
+                newImgDiv.appendChild(removeImg);
+
+                var deleteX = document.createElement("img");
+                deleteX.src = "img/x.png";
+                deleteX.style.height = "100%";
+                deleteX.style.width = "100%";
+                removeImg.appendChild(deleteX);
+
+                deleteX.addEventListener("click", function (event) {
+                    var parent = event.target.parentNode;
+                    var removePhoto = parent.parentNode;
+                    removePhoto.parentNode.removeChild(removePhoto);
+                })
+            })
+
+            var exit = document.createElement("div");
+            exit.classList.add("exit1");
+            addPicturePopUp.appendChild(exit);
+
+            var exitX = document.createElement("img");
+            exitX.src = "img/x.png";
+            exitX.style.height = "100%";
+            exitX.style.width = "100%";
+            exit.appendChild(exitX);
+
+            exit.addEventListener("click", function () {
+                addPicturePopUp.parentNode.removeChild(addPicturePopUp);
+            })
+        })
+///
         for (var i = 0; i < this.userData.album.length; i++) {
+
+            var pictureDiv = document.createElement("div");
+            pictureDiv.classList.add("image-style");
+            pictureContainer.appendChild(pictureDiv);
 
             var picture = document.createElement("img");
             picture.src = this.userData.album[i].link;
             picture.id = i;
             picture.classList.add("image-style");
-            pictureContainer.appendChild(picture);
-            //
+            pictureDiv.appendChild(picture);
+//Updated
+            var removeImg = document.createElement("div");
+            removeImg.classList.add("remove-img");
+            pictureDiv.appendChild(removeImg);
+
+            var deleteX = document.createElement("img");
+            deleteX.src = "img/x.png";
+            deleteX.style.height = "100%";
+            deleteX.style.width = "100%";
+            removeImg.appendChild(deleteX);
+
+            deleteX.addEventListener("click", function (event) {
+                var parent = event.target.parentNode;
+                var removePhoto = parent.parentNode;
+                removePhoto.parentNode.removeChild(removePhoto);
+            })
+//
+            
             // picture.addEventListener("mouseover", function (event) {
             //     event.target.style.width = "150px";
             //     event.target.style.height = "150px";
@@ -110,7 +260,7 @@ function PageRenderer(data) {
 
                     return image.src;
                 })
-
+            
 
                 var after = document.createElement("div");
                 after.classList.add("after");
@@ -155,47 +305,106 @@ function PageRenderer(data) {
                 rightContainer.appendChild(popUp)
             });
         }
+//Updated
+            var storyContainer = document.createElement("div");
+            storyContainer.style.display = "flex";
+            storyContainer.style.flexDirection = "column";
+            rightContainer.appendChild(storyContainer);
 
-        var storyContainer = document.createElement("div");
-        rightContainer.appendChild(storyContainer);
+            var addNewStory = document.createElement("div");
+            addNewStory.classList.add("new-story")
+            storyContainer.appendChild(addNewStory);
 
-        for (var j = 0; j < this.userData.stories.length; j++) {
-            var story = document.createElement("div");
-            story.id = j;
-            story.style.marginTop = "50px";
+            var addNewHeader = document.createElement("input");
+            addNewHeader.type = "text";
+            addNewHeader.style.height = "50px";
+            addNewHeader.style.fontSize = "18px";
+            addNewHeader.placeholder = "Enter header text";
+            addNewHeader.style.margin = "5px";
+            addNewStory.appendChild(addNewHeader);
 
-            var header = document.createElement("h1");
-            header.innerHTML = this.userData.stories[j].header;
+            var addNewParagraph = document.createElement("input");
+            addNewParagraph.type = "text";
+            addNewParagraph.style.height = "100px";
+            addNewParagraph.style.fontSize = "20px";
+            addNewParagraph.placeholder = "Enter your story";
+            addNewParagraph.style.margin = "5px"
+            addNewStory.appendChild(addNewParagraph);
 
-            var text = document.createElement("p");
-            text.innerHTML = this.userData.stories[j].paragraph;
+            var addNewData = document.createElement("span");
+            addNewData.innerText = "";
+            addNewStory.appendChild(addNewData);
 
-            var data = document.createElement("span");
-            data.innerHTML = this.userData.stories[j].newData;
+            var addNewSubmit = document.createElement("button");
+            addNewSubmit.innerText = "Post";
+            addNewStory.appendChild(addNewSubmit);
 
-            var button = document.createElement("button");
-            button.classList.add("button");
-            button.innerHTML = "Remove"
+            addNewSubmit.addEventListener("click", function () {
+                var story = document.createElement("div");
+                story.style.order = "0";
+                story.style.marginTop = "50px";
 
-            button.addEventListener("click", function (event) {
-                var removeStory = event.target.parentNode
-                removeStory.parentNode.removeChild(this.parentNode);
-            });
+                var header = document.createElement("h1");
+                header.innerHTML = addNewHeader.value;
 
-            story.appendChild(header);
-            story.appendChild(text);
-            story.appendChild(data);
-            story.appendChild(button);
+                var text = document.createElement("p");
+                text.innerHTML = addNewParagraph.value;
 
-            storyContainer.appendChild(story);
+                var data = document.createElement("span");
+                data.innerHTML = new Date();
+
+                var button = document.createElement("button");
+                button.classList.add("button");
+                button.innerHTML = "Remove"
+
+                button.addEventListener("click", function (event) {
+                    var removeStory = event.target.parentNode;
+                    removeStory.parentNode.removeChild(this.parentNode);
+                });
+
+                story.appendChild(header);
+                story.appendChild(text);
+                story.appendChild(data);
+                story.appendChild(button);
+
+                storyContainer.appendChild(story);
 
 
+            })
+        
+//
+            for (var j = 0; j < this.userData.stories.length; j++) {
+                var story = document.createElement("div");
+                story.style.order = "10"
+                story.id = j;
+                story.style.marginTop = "50px";
+
+                var header = document.createElement("h1");
+                header.innerHTML = this.userData.stories[j].header;
+
+                var text = document.createElement("p");
+                text.innerHTML = this.userData.stories[j].paragraph;
+
+                var data = document.createElement("span");
+                data.innerHTML = this.userData.stories[j].newData;
+
+                var button = document.createElement("button");
+                button.classList.add("button");
+                button.innerHTML = "Remove"
+
+                button.addEventListener("click", function (event) {
+                    var removeStory = event.target.parentNode
+                    removeStory.parentNode.removeChild(this.parentNode);
+                });
+
+                story.appendChild(header);
+                story.appendChild(text);
+                story.appendChild(data);
+                story.appendChild(button);
+
+                storyContainer.appendChild(story);
+
+            }
+            return rightContainer;
         }
-
-
-
-
-
-        return rightContainer;
     }
-}

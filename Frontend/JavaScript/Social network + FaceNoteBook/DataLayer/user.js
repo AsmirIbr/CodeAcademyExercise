@@ -19,7 +19,7 @@ function User(name) {
     }
 
     this.generateAlbum = function () {
-        for (var i = 0; i < 14; i++) {
+        for (var i = 0; i < 13; i++) {
             this.album.push(new Picture(i));
         }
     }
