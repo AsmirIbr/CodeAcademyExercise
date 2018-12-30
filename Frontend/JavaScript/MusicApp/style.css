@@ -114,3 +114,7 @@
 .album-line>h4{
     color:rgba(148, 10, 10, 0.918); 
 }
+
+.render-tracks{
+    color: rgba(233, 173, 8, 0.945);
+}
