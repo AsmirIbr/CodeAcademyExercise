@@ -1,0 +1,116 @@
+.main-wrapper{
+    display: flex;
+}
+
+.main-div{
+    width: 60%;
+    border-left: 5px double grey;
+}
+
+.loader{
+    position: relative;
+}
+
+.loader>img{
+    position: absolute;
+    top: 250px;
+    left: 50%;
+}
+
+.top-div{
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.left-top-div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.name-div{
+    margin-bottom: 10px;
+    color: rgba(248, 36, 36, 0.836);
+}
+
+.image-div{
+   margin-top: 10px;
+}
+
+.right-div{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.similar-line{
+    display: flex;
+    padding: 5px;
+    align-items: center;
+}
+
+.similar-line>a{
+    margin-left: 10px;
+    text-decoration: none;
+    color: rgba(248, 36, 36, 0.836);
+}
+
+.bottom-div{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.first-bottom{
+    display: flex;
+}
+
+.first-bottom>div{
+    display: flex;
+    flex-direction: column;
+}
+
+.rightBottom{
+    margin-top: 25px;
+}
+
+.rightBottom>a{
+    padding: 15px;
+    text-decoration: none;
+    color: rgba(248, 36, 36, 0.836);
+    font-size: 15px;
+}
+
+.bio-div{
+    width: 90%;
+    margin: 25px auto 0;
+}
+
+.bio-div div{
+    margin-bottom: 25px;
+}
+
+.album-div{
+    width: 40%;
+}
+
+.album-div>h3{
+    color:rgba(148, 10, 10);
+}
+
+.album-line{
+    display: flex;
+    padding: 15px;
+}
+
+.album-line>img{
+    margin-right: 15px;
+}
+
+.album-line>h4{
+    color:rgba(148, 10, 10, 0.918); 
+}
